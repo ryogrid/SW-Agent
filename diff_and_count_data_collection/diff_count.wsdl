@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="diff_count"
+ targetNamespace="http://hoge/~hoge/diff_count.wsdl"
+ xmlns:tns="http://hoge/~hoge/diff_count.wsdl"
+ xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:x="http://my.first.mtom.net"
+ xmlns:xop="http://www.w3.org/2004/08/xop/include"
+ xmlns:xmlmime="http://www.w3.org/2004/11/xmlmime"
+ xmlns:ns="urn:diff_count"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap12/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="http://my.first.mtom.net"
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:x="http://my.first.mtom.net"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:xmlmime="http://www.w3.org/2004/11/xmlmime"
+  xmlns:ns="urn:diff_count"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://www.w3.org/2004/08/xop/include"/>
+  <import namespace="http://www.w3.org/2004/11/xmlmime"/>
+  <import namespace="http://www.w3.org/2003/05/soap-encoding"/>
+ </schema>
+
+ <schema targetNamespace="urn:diff_count"
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:x="http://my.first.mtom.net"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:xmlmime="http://www.w3.org/2004/11/xmlmime"
+  xmlns:ns="urn:diff_count"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://www.w3.org/2004/08/xop/include"/>
+  <import namespace="http://www.w3.org/2004/11/xmlmime"/>
+  <import namespace="http://www.w3.org/2003/05/soap-encoding"/>
+ </schema>
+
+</types>
+
+<message name="getCurrentFoundCountRequest">
+</message>
+
+<message name="getCurrentFoundCountResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="changeConditionToFindRequest">
+ <part name="color" type="xsd:int"/>
+ <part name="threshold" type="xsd:int"/>
+</message>
+
+<message name="changeConditionToFindResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="resetCounterRequest">
+</message>
+
+<message name="resetCounterResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="getAFrameHexBinaryRequest">
+</message>
+
+<message name="getAFrameHexBinaryResponse">
+ <part name="result" type="xsd:hexBinary"/>
+</message>
+
+<message name="getAFramebase64BinaryRequest">
+</message>
+
+<message name="getAFramebase64BinaryResponse">
+ <part name="result" type="xsd:base64Binary"/>
+</message>
+
+<message name="getAFramebaseDimeStreamRequest">
+</message>
+
+<message name="getAFramebaseDimeStreamResponse">
+ <part name="result" type="xsd:Dimebase64Binary"/>
+</message>
+
+<message name="getAFrameMtom">
+</message>
+
+<message name="mtomBinary">
+ <part name="Include" type="xop:Include"/>
+</message>
+
+<portType name="diff_countPortType">
+ <operation name="getCurrentFoundCount">
+  <documentation>Service definition of function ns__getCurrentFoundCount</documentation>
+  <input message="tns:getCurrentFoundCountRequest"/>
+  <output message="tns:getCurrentFoundCountResponse"/>
+ </operation>
+ <operation name="changeConditionToFind">
+  <documentation>Service definition of function ns__changeConditionToFind</documentation>
+  <input message="tns:changeConditionToFindRequest"/>
+  <output message="tns:changeConditionToFindResponse"/>
+ </operation>
+ <operation name="resetCounter">
+  <documentation>Service definition of function ns__resetCounter</documentation>
+  <input message="tns:resetCounterRequest"/>
+  <output message="tns:resetCounterResponse"/>
+ </operation>
+ <operation name="getAFrameHexBinary">
+  <documentation>Service definition of function ns__getAFrameHexBinary</documentation>
+  <input message="tns:getAFrameHexBinaryRequest"/>
+  <output message="tns:getAFrameHexBinaryResponse"/>
+ </operation>
+ <operation name="getAFramebase64Binary">
+  <documentation>Service definition of function ns__getAFramebase64Binary</documentation>
+  <input message="tns:getAFramebase64BinaryRequest"/>
+  <output message="tns:getAFramebase64BinaryResponse"/>
+ </operation>
+ <operation name="getAFramebaseDimeStream">
+  <documentation>Service definition of function ns__getAFramebaseDimeStream</documentation>
+  <input message="tns:getAFramebaseDimeStreamRequest"/>
+  <output message="tns:getAFramebaseDimeStreamResponse"/>
+ </operation>
+ <operation name="getAFrameMtom">
+  <documentation>Service definition of function ns__getAFrameMtom</documentation>
+  <input message="tns:getAFrameMtom"/>
+  <output message="tns:mtomBinary"/>
+ </operation>
+</portType>
+
+<binding name="diff_count" type="tns:diff_countPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="getCurrentFoundCount">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+ <operation name="changeConditionToFind">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+ <operation name="resetCounter">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+ <operation name="getAFrameHexBinary">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+ <operation name="getAFramebase64Binary">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+ <operation name="getAFramebaseDimeStream">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+ <operation name="getAFrameMtom">
+  <SOAP:operation style="rpc"/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:diff_count" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="diff_count">
+ <documentation>Do framedifferencing and Count pixels</documentation>
+ <port name="diff_count" binding="tns:diff_count">
+  <SOAP:address location="http://localhost:1024/"/>
+ </port>
+</service>
+
+</definitions>

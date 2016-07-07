@@ -1,0 +1,4 @@
+・gSOAP switches to SOAP_IO_STORE when SOAP_IO_CHUNK (HTTP chunking) is not supported by the client                                         
+  Since it is undesirable to use SOAP_IO_STORE with streaming, we reset it to SOAP_IO_BUFFER
+
+chunked streaming DIME と MTOM の間でどんな差異があり，性能はどの程度違うのか．

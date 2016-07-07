@@ -1,0 +1,43 @@
+CC = gcc -static
+OPENCV_INC = -I/usr/include/opencv/
+IPL_LIB	    = -L/usr/local/lib -L/usr/lib  -L/usr/X11R6/lib
+OPENCV_LIB  = -L/usr/local/lib -lcxcore -lcv -lhighgui -lcvaux
+
+INCLUDEDIR  = -I./include
+CFLAGS 	    = -g -Wall $(OPENCV_INC) $(INCLUDEDIR)
+LDLIBS	    = $(OPENCV_LIB) $(IPL_LIB) -lm  -pthread -lX11
+
+LD_SCRIPT = 
+LDFLAGS = 
+LIBS =  ../../libgsoap.a #./libgsoap_debug.a
+
+USERDEF = 
+
+#if you want to build for webcam, you should set this flag -DWEBCAM
+#CAMERA_TYPE	= -DWEBCAM
+
+SERVER_SOURCE = diff_and_countServer.c		\
+		diff_and_countC.c
+
+CLIENT_SOURCE = diff_and_countClient.c		\
+		diff_and_countC.c
+
+WS_CLIENT_SOURCE = diff_and_count_bench_client.c	\
+		   diff_and_countC.c		\
+		   tcp_util.c
+   
+WS_CLIENT_OBJECT = $(WS_CLIENT_SOURCE:.c=.o)
+
+WS_CLIENT_EXEC = diff_and_count_bench_client
+
+all : ws_client
+
+ws_client : $(WS_CLIENT_OBJECT)
+	$(CC) $(LDLIBS) $(CFLAGS) -o $(WS_CLIENT_EXEC) $(LDFLAGS) $^ $(LIBS)
+	rm *.o
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< $(USERDEF) #$(CAMERA_TYPE)
+
+clean :
+	rm -rf *~ *.o

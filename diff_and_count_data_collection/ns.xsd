@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <schema targetNamespace="urn:diff_count"
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:x="http://my.first.mtom.net"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:xmlmime="http://www.w3.org/2004/11/xmlmime"
+  xmlns:ns="urn:diff_count"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://www.w3.org/2004/08/xop/include"/>
+  <import namespace="http://www.w3.org/2004/11/xmlmime"/>
+  <import namespace="http://www.w3.org/2003/05/soap-encoding"/>
+ </schema>
+

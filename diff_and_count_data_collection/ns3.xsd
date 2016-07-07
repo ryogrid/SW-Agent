@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <schema targetNamespace="http://tempuri.org/ns3.xsd"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns3="http://tempuri.org/ns3.xsd"
+  xmlns:ns="urn:diff_count"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <complexType name="SOAPService">
+   <sequence>
+     <element name="ID" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="name" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="owner" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="description" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="homepageURL" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="endpoint" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="SOAPAction" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="methodNamespaceURI" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="serviceStatus" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="methodName" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="dateCreated" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="downloadURL" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="wsdlURL" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="instructions" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="contactEmail" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="serverImplementation" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+   </sequence>
+  </complexType>
+ </schema>
+
